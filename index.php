@@ -1,20 +1,6 @@
-# challenge_Zero2One_2019
+<?php
 
-##O PROBLEMA
-
-Classificar e ordenar os caracteres da seguinte string:
-
- 
-
-abcdefghijklmnopqrstuvwxyz_0123456789
-
- 
-
-Através do número de vezes que os caracteres da string acima aparecem no texto a seguir em ordem crescente:
-
- 
-
-u9wlcn1cj3ej3u9d74kmylhm077mpj3f44k1m2hvz
+$challenge = trim("u9wlcn1cj3ej3u9d74kmylhm077mpj3f44k1m2hvz
 
 j3xep2vgbbox4kn4kf4o8g5h4kvzxr4kmha828gha
 
@@ -160,8 +146,19 @@ _xi6a8e8f_a8bea8wg7a8a81morlogp0mm5a8v1rw
 
 1w5euswza8ra8a8nyz1ka8xuncumlsnzo7a80vkmj
 
-31oej3y8go07h8gtrqtdo5u0i6ubi68gj3hrut9k5
+31oej3y8go07h8gtrqtdo5u0i6ubi68gj3hrut9k5");
 
- 
+$string = "abcdefghijklmnopqrstuvwxyz_0123456789";
+$chars  = str_split($string);
+$return = array();
+foreach (count_chars($challenge, 1) AS $i => $number) {
+    $char = chr($i);
+    $return[$char] = $number;
+}
+asort($return);
 
-Agora, com a sequência classificada e ordenada de maneira crescente exclua todos os caracteres que venham depois (e incluindo) o símbolo “_” (sem aspas). A palavra que restar é a palavra chave para 100% de desconto na pré-inscrição do evento. Por exemplo, bg_xf, porém, x e f aparecem após um “_”, logo, a classificação ficaria “bg”.
+$keys = array_keys($return);
+$implode = implode($keys);
+$explode = explode('_', $implode);
+$keyword = $explode[0];
+echo $keyword;
