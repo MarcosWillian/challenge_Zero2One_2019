@@ -148,8 +148,6 @@ _xi6a8e8f_a8bea8wg7a8a81morlogp0mm5a8v1rw
 
 31oej3y8go07h8gtrqtdo5u0i6ubi68gj3hrut9k5");
 
-$string = "abcdefghijklmnopqrstuvwxyz_0123456789";
-$chars  = str_split($string);
 $return = array();
 foreach (count_chars($challenge, 1) AS $i => $number) {
     $char = chr($i);
